@@ -1,19 +1,86 @@
-.header {
+header {
     font-weight: bold; 
     font-size: 64px;
     color: #b400ff;
 }
 
+#hamburgerBtn
+ {
+    display:none;
+ }
+
+ footer{
+     display: flex;
+     flex-flow: wrap;
+ }
+
+/*add flex for navigation*/
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > ul > li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+/*side by side main content and image*/
+ main {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+}
+
+/*Give space between the rows*/
+main > div {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+} 
+
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .basicImage {
-        width: 500px;
-        height: 600px;
+        width: 400px;
+        height: 250px;
+    }
+
+    nav > ul {
+        justify-content: center;
+    }
+
+    nav > ul > li:last-child
+    {
+        padding-right: 0px;
+    }
+
+    /*stack items inside the div by changing the flex direction to column*/
+    main > div{
+        flex-direction: column;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-  
+      .basicImage {
+        width: 600px;
+        height: 450px;
+    }
+
+    /*changes the flex to row instead of column on web*/
+    main {
+        flex-direction: row;
+    }
+
+    /*center the page content on web*/
+    body
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
